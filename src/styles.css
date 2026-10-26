@@ -1,0 +1,31 @@
+:root { color-scheme: light dark; --bg: #f7f5f1; --fg: #1d2127; --card: #fff; --mut: #6a717b; }
+@media (prefers-color-scheme: dark) { :root { --bg: #14171b; --fg: #e8eaed; --card: #1f2329; --mut: #98a0aa; } }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--fg); font: 15px/1.4 system-ui, sans-serif; }
+.app { max-width: 1100px; margin: 0 auto; padding: 16px; }
+h1 { font-size: 1.3rem; margin: 0 0 4px; }
+.status { color: var(--mut); margin: 0 0 12px; }
+.placar { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 12px; }
+.cand { flex: 1 1 220px; background: var(--card); border-left: 6px solid; padding: 8px 12px; border-radius: 6px; }
+.pct { font-size: 1.8rem; font-weight: 700; }
+small { color: var(--mut); }
+select { font: inherit; padding: 4px 6px; }
+.legenda { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; margin: 10px 0; }
+.escala i { display: inline-block; width: 22px; height: 12px; margin-left: 4px; }
+.mapa { width: 100%; height: auto; max-height: 80vh; background: var(--card); border-radius: 8px; cursor: grab; touch-action: none; }
+.mapa path { stroke: rgba(0, 0, 0, .18); stroke-width: .15; vector-effect: non-scaling-stroke; }
+.mapa path:hover { stroke: #000; stroke-width: 1; }
+.tip { position: fixed; background: var(--card); color: var(--fg); padding: 8px 10px; border-radius: 6px; box-shadow: 0 2px 10px rgba(0,0,0,.3); pointer-events: none; z-index: 5; font-size: 13px; }
+.filtros { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
+.busca { position: relative; flex: 1 1 260px; max-width: 380px; }
+.busca input { width: 100%; font: inherit; padding: 6px 10px; border-radius: 6px; border: 1px solid var(--mut); background: var(--card); color: var(--fg); }
+.busca ul { position: absolute; z-index: 10; left: 0; right: 0; margin: 2px 0 0; padding: 0; list-style: none; background: var(--card); border: 1px solid var(--mut); border-radius: 6px; max-height: 300px; overflow: auto; }
+.busca li { padding: 6px 10px; cursor: pointer; }
+.busca li:hover { background: var(--bg); }
+.filtro-pct input { width: 70px; font: inherit; padding: 4px 6px; }
+.filtro-pct button { font: inherit; }
+.cartao { position: relative; background: var(--card); border-radius: 8px; padding: 10px 40px 10px 14px; margin-top: 10px; display: grid; gap: 4px; }
+.cartao > button { position: absolute; top: 4px; right: 8px; border: 0; background: none; color: var(--fg); font-size: 22px; cursor: pointer; }
+.cartao .linha { display: flex; justify-content: space-between; gap: 12px; border-left: 5px solid; padding-left: 8px; }
+.mapa .destaque { stroke: #ffd400; stroke-width: 2.5; vector-effect: non-scaling-stroke; }
+.mapa .marca { fill: none; stroke: #ffd400; }
